@@ -14,7 +14,6 @@ import Favorites from "./Pages/Favorites/Favorites";
 function App() {
   return (
     <>
-      <Header />
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -25,7 +24,6 @@ function App() {
         <Route path="/publish-product" element={<PublishProduct/>}/>
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
-      <Navbar />
     </>
   );
 }
