@@ -7,6 +7,8 @@ function App() {
   return (
     <>
       <Button onClick="" variation='light' type='button' text="Contactar" />
+      <Input variation='product-input'/>
+      <Product/>
     </>
   )
 }
