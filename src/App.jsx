@@ -1,28 +1,31 @@
 import "./App.css";
-import Button from "./components/ui/Button/Button";
-import IconContainer from "./components/ui/IconContainer/IconContainer";
-import Input from "./components/ui/Input/Input";
-import Navbar from './components/ui/Navbar/Navbar'
-import ProductCard from "./components/product/ProductCard/ProductCard";
+import Navbar from "./components/ui/Navbar/Navbar";
 import Header from "./components/ui/Header/Header";
+import { Route, Routes, Navigate } from "react-router-dom";
+import Login from "./Pages/Login/Login";
+import ProductDetails from "./Pages/ProductDetails/ProductDetails";
+import Products from "./Pages/Products/Products";
+import PublishProduct from "./Pages/PublishProduct/PublishProduct";
+import Home from "./Pages/Home/Home";
+import Favorites from "./Pages/Favorites/Favorites";
+
 
 
 function App() {
   return (
     <>
-    <Header/>
-      <Button onClick="" variation="light" type="button" text="Contactar" />
-      <IconContainer variation="apple" />
-      <IconContainer variation="like" />
-      <Input variation="product-input" />
-      <ProductCard
-        image="https://via.placeholder.com/250"
-        name="Ejemplo de Producto"
-        rating={4}
-      />
-      <Navbar/>
+      <Header />
 
-     
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/product-details" element={<ProductDetails />} />
+        <Route path="/products" element={<Products/>}/>
+        <Route path="/publish-product" element={<PublishProduct/>}/>
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+      <Navbar />
     </>
   );
 }
