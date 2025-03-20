@@ -1,4 +1,5 @@
 import { FaBell, FaRegEnvelope, FaHeart, FaHome, FaGoogle, FaApple, FaFacebook } from "react-icons/fa";
+import { IoHeartCircleOutline } from "react-icons/io5";
 import { LuCirclePlus } from "react-icons/lu";
 import styles from './IconContainer.module.css';
 
@@ -7,6 +8,7 @@ const icons = {
   envelope: FaRegEnvelope,
   home: FaHome,
   plus: LuCirclePlus,
+  favorites: IoHeartCircleOutline,
   google: FaGoogle,
   apple: FaApple,
   facebook: FaFacebook,

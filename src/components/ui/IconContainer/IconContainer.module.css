@@ -19,6 +19,7 @@
 .envelope { background-color: transparent;  width: 58px; height: 58px;  }
 .home { background-color: transparent;  width: 58px; height: 58px;  }
 .plus { background-color: transparent;  width: 58px; height: 58px;  }
+.favorites {background-color: transparent;  width: 58px; height: 58px;  }
 .google { background-color: #ED3241; width: 48px; height: 48px; }
 .apple { background-color: #1F2024; width: 48px; height: 48px;}
 .facebook { background-color: #006FFD; width: 48px; height: 48px; }
@@ -29,6 +30,7 @@
 .envelope .iconImg { color: var(--secondary); }
 .home .iconImg { color: var(--secondary); }
 .plus .iconImg { color: var(--secondary); }
+.favorites .iconImg { color: var(--secondary); }
 .google .iconImg { color: white; width: 20px; height: 20px; }
 .apple .iconImg { color: white; width: 20px; height: 20px; }
 .facebook .iconImg { color: white; width: 20px; height: 20px; }
@@ -39,6 +41,7 @@
 .envelope:hover .iconImg { color: var(--primary); }
 .home:hover .iconImg { color: var(--primary); }
 .plus:hover .iconImg { color: var(--primary); }
+.favorites:hover .iconImg { color: var(--primary); }
 .google:hover { background-color: darkred; }
 .apple:hover { background-color: gray; }
 .facebook:hover { background-color: #0d5fce; }
@@ -49,6 +52,7 @@
 .envelope:active .iconImg { color: var(--tertiary); }
 .home:active .iconImg { color: var(--tertiary); }
 .plus:active .iconImg { color: var(--tertiary); }
+.favorites:active .iconImg { color: var(--tertiary); }
 .google:active { background-color: crimson; }
 .apple:active { background-color: black; }
 .facebook:active { background-color: #00376b; }

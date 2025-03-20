@@ -2,8 +2,8 @@ import "./App.css";
 import Button from "./components/ui/Button/Button";
 import IconContainer from "./components/ui/IconContainer/IconContainer";
 import Input from "./components/ui/Input/Input";
-import ProductCard from "./components/product/ProductCard/ProductCard";
-import CategoryNav from "./components/ui/CategoryNav/CategoryNav";
+import Navbar from './components/ui/Navbar/Navbar'
+import ProductCard from "./components/ui/ProductCard/ProductCard";
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         name="Ejemplo de Producto"
         rating={4}
       />
-      <CategoryNav />
+      <Navbar/>
     </>
   );
 }
