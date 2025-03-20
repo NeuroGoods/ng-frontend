@@ -1,21 +1,15 @@
 import { useState } from "react";
 import styles from "./CategoryNav.module.css";
 
-function CategoryNav() {
-  const [activeCategory, setActiveCategory] = useState(1); // Estado para manejar la categoría seleccionada
-
+function CategoryNav({ activeCategory, setActiveCategory }) {
   const categories = [
-    { id: 1, name: "Sensory-Friendly" },
-    { id: 2, name: "Mas visitados" },
+    { id: "Alive", name: "Alive" },
+    { id: "Dead", name: "Dead" },
     { id: 3, name: "Organización" },
     { id: 4, name: "Recursos Didácticos" },
     { id: 5, name: "Regulación" },
     { id: 6, name: "Moda" },
   ];
-
-  const handleCategoryClick = (id) => {
-    setActiveCategory(id); // Actualiza el estado con la categoría seleccionada
-  };
 
   return (
     <nav className={styles.categoryNav}>
@@ -23,7 +17,7 @@ function CategoryNav() {
         {categories.map((category) => (
           <button
             key={category.id}
-            onClick={() => handleCategoryClick(category.id)} // Cambia el estado cuando se hace click
+            onClick={() => setActiveCategory(category.id)}
             className={`${styles.categoryButton} ${activeCategory === category.id ? styles.active : ""}`}
           >
             {category.name}
