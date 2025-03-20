@@ -1,8 +1,8 @@
 import React from "react";
 import Slider from "react-slick";
-import styles from "./ImageCarousel.module.css";
+import styles from "./ProductCarousel.module.css";
 
-const ImageCarousel = () => {
+const ProductCarousel = () => {
   const settings = {
     dots: true,
     infinite: true,
@@ -48,4 +48,4 @@ const ImageCarousel = () => {
   );
 };
 
-export default ImageCarousel;
+export default ProductCarousel;
