@@ -1,0 +1,47 @@
+:root {
+    --primary: #58A19B; 
+  
+  .footer {
+    background-color: var(--primary);
+    padding: 16px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  
+  .footerContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  
+  .logo {
+    width: 60px; /* Ajusta según necesidad */
+    height: auto;
+  }
+  
+  .brandName {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .footerNav {
+    display: flex;
+    gap: 12px;
+  }
+  
+  .footerLink {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+  
+  .copyright {
+    margin-top: 8px;
+    font-size: 0.875rem;
+  }
+  
