@@ -13,6 +13,7 @@ import Favorites from "./Pages/Favorites/Favorites";
 function App() {
     return (
         <>
+            <main className="mainContent">
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/favorites" element={<Favorites />} />
@@ -22,6 +23,7 @@ function App() {
                 <Route path="/publish-product" element={<PublishProduct />} />
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>
+            </main>
         </>
     );
 }
