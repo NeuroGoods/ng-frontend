@@ -5,55 +5,62 @@ import { getProducts } from "../../api/apiService";
 import styles from "./Products.module.css";
 
 const Products = () => {
-  const [products, setProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
-  const [activeCategory, setActiveCategory] = useState(1); // ID de la categoría activa
+    const [products, setProducts] = useState([]);
+    const [filteredProducts, setFilteredProducts] = useState([]);
+    const [activeCategory, setActiveCategory] = useState(1); // ID de la categoría activa
 
-  // Obtener productos desde la API
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await getProducts();
-        setProducts(data);
-        filterProducts(data, activeCategory);
-      } catch (error) {
-        console.error("Error al obtener productos:", error);
-      }
+    // Obtener productos desde la API
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const data = await getProducts();
+                setProducts(data);
+                filterProducts(data, activeCategory);
+            } catch (error) {
+                console.error("Error al obtener productos:", error);
+            }
+        };
+        fetchData();
+    }, []);
+
+    // Filtrar productos cuando cambie la categoría activa
+    useEffect(() => {
+        filterProducts(products, activeCategory);
+    }, [activeCategory, products]);
+
+    const filterProducts = (allProducts, categoryId) => {
+        if (!allProducts.length) return;
+        const filtered = allProducts.filter(
+            (product) => product.categoryId === categoryId
+        );
+        setFilteredProducts(filtered);
     };
-    fetchData();
-  }, []);
 
-  // Filtrar productos cuando cambie la categoría activa
-  useEffect(() => {
-    filterProducts(products, activeCategory);
-  }, [activeCategory, products]);
-
-  const filterProducts = (allProducts, categoryId) => {
-    if (!allProducts.length) return;
-    const filtered = allProducts.filter(product => product.categoryId === categoryId);
-    setFilteredProducts(filtered);
-  };
-
-  return (
-    <div className={styles.productsPage}>
-      <CategoryNav activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
-      
-      <div className={styles.productsGrid}>
-        {filteredProducts.length > 0 ? (
-          filteredProducts.map((product) => (
-            <ProductCard
-              key={product.id}
-              image={product.image}
-              name={product.name}
-              rating={product.rating}
+    return (
+        <div className={styles.productsPage}>
+            <CategoryNav
+                activeCategory={activeCategory}
+                setActiveCategory={setActiveCategory}
             />
-          ))
-        ) : (
-          <p className={styles.noProducts}>No hay productos en esta categoría.</p>
-        )}
-      </div>
-    </div>
-  );
+
+            <div className={styles.productsGrid}>
+                {filteredProducts.length > 0 ? (
+                    filteredProducts.map((product) => (
+                        <ProductCard
+                            key={product.id}
+                            image={product.image}
+                            name={product.name}
+                            rating={product.rating}
+                        />
+                    ))
+                ) : (
+                    <p className={styles.noProducts}>
+                        No hay productos en esta categoría.
+                    </p>
+                )}
+            </div>
+        </div>
+    );
 };
 
 export default Products;
