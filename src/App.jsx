@@ -9,22 +9,8 @@ import Products from "./Pages/Products/Products";
 import PublishProduct from "./Pages/PublishProduct/PublishProduct";
 import Home from "./Pages/Home/Home";
 import Favorites from "./Pages/Favorites/Favorites";
-import axios from "axios";
-import { getProducts } from "./api/apiService";
 
 function App() {
-  useEffect(() => {
-          const fetchData = async () => {
-              try {
-                  const data = await getProducts();
-                  console.log(data);
-                } catch (error) {
-                  console.error("Error al obtener productos:", error);
-              }
-          };
-          fetchData();
-      }, []);
-      
     return (
         <>
             <Routes>
