@@ -1,8 +1,5 @@
-:root {
-    --primary: #58A19B; 
-}
   .footer {
-    background-color: var(--primary);
+    background-color: #B5DCCA;
     padding: 16px;
     position: fixed;
     bottom: 0;
