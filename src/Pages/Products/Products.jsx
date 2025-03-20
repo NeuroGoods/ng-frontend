@@ -45,10 +45,11 @@ const Products = () => {
             />
 
             <div className={styles.productsGrid}>
-                {filteredProducts.length> 0 ? (
+                {filteredProducts.length > 0 ? (
                     filteredProducts.map((product) => (
                         <ProductCard
                             key={product.id}
+                            id={product.id} // Se incluye el id del producto
                             image={product.image}
                             name={product.name}
                             rating={product.rating}
