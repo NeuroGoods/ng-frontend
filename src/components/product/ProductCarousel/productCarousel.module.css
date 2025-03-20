@@ -1,20 +1,85 @@
+/* Mobile-first styles */
 .carouselContainer {
-    max-width: 800px;
+    position: relative;
+    width: 100%;
+    max-width: 430px; /* Ancho máximo de 430px */
+    height: 932px; /* Altura de 932px */
     margin: 0 auto;
-    padding: 20px;
+    overflow: hidden; /* Oculta contenido fuera del área visible */
+  }
+  
+  .navButton {
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    width: 50px;
+    height:50px;
+    background-color: #58A19B; /* Color personalizado */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Botones redondos */
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s;
+  }
+  
+  .navButton:hover {
+    background-color: #4b8b86; /* Un tono más oscuro para el hover */
+  }
+  
+  .prevButton {
+    left: 10px; /* Ajusta la posición del botón de 'previo' */
+  }
+  
+  .nextButton {
+    right: 10px; /* Ajusta la posición del botón de 'next' */
   }
   
   .slide {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    height: 100%;
+   
+    
   }
   
   .image {
-    width: 100%;
+    margin-top: 150px;
+    width: 50%;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilo para pantallas grandes */
+  @media (min-width: 768px) {
+    .carouselContainer {
+      max-width: 700px; /* Ancho máximo para pantallas medianas */
+      height: 500px; /* Ajusta la altura para pantallas más grandes */
+    }
+  
+    .navButton {
+      width: 50px;
+      height: 50px;
+      font-size: 30px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .carouselContainer {
+      max-width: 900px; /* Ancho máximo para pantallas grandes */
+      height: 600px; /* Ajusta la altura para pantallas grandes */
+    }
+  
+    .navButton {
+      width: 60px;
+      height: 60px;
+      font-size: 36px;
+    }
   }
   

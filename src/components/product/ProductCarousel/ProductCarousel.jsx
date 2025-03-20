@@ -3,28 +3,16 @@ import Slider from "react-slick";
 import styles from "./ProductCarousel.module.css";
 
 const ProductCarousel = () => {
+  const sliderRef = React.useRef(null);
+
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 1, // Solo una imagen visible
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
   };
 
   const images = [
@@ -37,13 +25,26 @@ const ProductCarousel = () => {
 
   return (
     <div className={styles.carouselContainer}>
-      <Slider {...settings}>
+      <Slider ref={sliderRef} {...settings}>
         {images.map((src, index) => (
           <div key={index} className={styles.slide}>
             <img src={src} alt={`Slide ${index + 1}`} className={styles.image} />
           </div>
         ))}
       </Slider>
+      <button
+        className={`${styles.navButton} ${styles.prevButton}`}
+        onClick={() => sliderRef.current.slickPrev()}
+
+      >
+        {"<"}
+      </button>
+      <button
+        className={`${styles.navButton} ${styles.nextButton}`}
+        onClick={() => sliderRef.current.slickNext()}
+      >
+        {">"}
+      </button>
     </div>
   );
 };
