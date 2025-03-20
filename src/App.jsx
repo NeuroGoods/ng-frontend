@@ -2,7 +2,8 @@ import "./App.css";
 import Button from "./components/ui/Button/Button";
 import IconContainer from "./components/ui/IconContainer/IconContainer";
 import Input from "./components/ui/Input/Input";
-import ProductCard from "./components/ui/ProductCard/ProductCard";
+import ProductCard from "./components/product/ProductCard/ProductCard";
+import CategoryNav from "./components/ui/CategoryNav/CategoryNav";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         name="Ejemplo de Producto"
         rating={4}
       />
+      <CategoryNav />
     </>
   );
 }
