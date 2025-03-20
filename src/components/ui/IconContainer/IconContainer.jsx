@@ -1,4 +1,4 @@
-import { FaBell, FaRegEnvelope, FaHome, FaGoogle, FaApple, FaFacebook } from "react-icons/fa";
+import { FaBell, FaRegEnvelope, FaHeart, FaHome, FaGoogle, FaApple, FaFacebook } from "react-icons/fa";
 import { LuCirclePlus } from "react-icons/lu";
 import styles from './IconContainer.module.css';
 
@@ -9,7 +9,8 @@ const icons = {
   plus: LuCirclePlus,
   google: FaGoogle,
   apple: FaApple,
-  facebook: FaFacebook
+  facebook: FaFacebook,
+  like: FaHeart
 };
 
 const IconContainer = ({ variation = "bell", size = 48, onClick }) => {
