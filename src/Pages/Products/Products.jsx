@@ -13,7 +13,7 @@ const Products = () => {
                 setActiveCategory={setActiveCategory}
             />
 
-            <ProductGrid limit={10} activeCategory={activeCategory} />
+            <ProductGrid limit={12} activeCategory={activeCategory} />
         </div>
     );
 };
