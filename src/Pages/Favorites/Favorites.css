@@ -20,3 +20,9 @@
     margin-right: 22px; /* Ajusta el valor para recortar más o menos */
   }
   
+
+  .delete-button{
+    background: transparent;
+    border: 0px;
+    color:#58A19B;
+  }
