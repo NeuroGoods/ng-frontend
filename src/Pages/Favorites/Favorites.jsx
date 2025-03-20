@@ -1,13 +1,17 @@
 import React from "react";
-import ContainerSection from "../../components/ui/ImageContainer/ImageContainer";
-
-
+import ProductCard from "../../components/ui/ContainerProductDetail/ContainerProductDetail";
+import ContainerSection from '../../components/ui/ImageContainer/ImageContainer'
 
 const Favorites = () => {
   return (
     <div>
       Favorites
-      <ContainerSection />
+      <h2>Jueves</h2>
+      <p>Si ves esto, el componente se está mostrando correctamente.</p>
+      <div>
+        <ContainerSection />
+        <ProductCard />
+      </div>
     </div>
   );
 };
