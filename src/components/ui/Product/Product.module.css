@@ -1,0 +1,79 @@
+/* ProductCard.css */
+
+/* Contenedor principal */
+.product-card {
+    width: 250px;
+    height: 350px;
+    background-color: #e0e5ec; /* Color de fondo similar al de la imagen */
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Contenedor de la imagen */
+  .image-container {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Imagen del producto */
+  .product-image {
+    width: 70%;
+    height: auto;
+  }
+  
+  /* Información del producto */
+  .product-info {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    background-color: #001b2e; /* Fondo oscuro para la parte inferior */
+    color: white;
+  }
+  
+  /* Nombre del producto */
+  .product-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  
+  /* Calificación del producto */
+  .product-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Estrellas de la calificación */
+  .stars {
+    margin-right: 5px;
+  }
+  
+  /* Valor de la calificación */
+  .rating-value {
+    font-size: 1rem;
+  }
+  
+  /* Ícono del corazón */
+  .heart-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .heart-button {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
