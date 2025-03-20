@@ -4,6 +4,7 @@ import IconContainer from "./components/ui/IconContainer/IconContainer";
 import Input from "./components/ui/Input/Input";
 import Navbar from './components/ui/Navbar/Navbar'
 import ProductCard from "./components/product/ProductCard/ProductCard";
+import CategoryNav from "./components/ui/CategoryNav/CategoryNav";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         rating={4}
       />
       <Navbar/>
-
+      <CategoryNav/>
      
     </>
   );
