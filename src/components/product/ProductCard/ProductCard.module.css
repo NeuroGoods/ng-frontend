@@ -30,12 +30,16 @@
 /* contenedor de la información (nombre y rating), organiza los elementos verticalmente */
 .productInfoBox {
     margin-top: 129px;
+    position: relative;
+    width: 100%; /* O un ancho fijo, como 200px */
+    height: 100px; /* Ajusta según necesites */
     background-color: var(--secondary);
     padding: 10px;
     border-radius: 10px;
     color: white;
     text-align: left;
     display: block;
+    border: 1px solid var(--secondary);
 }
 
 /* nombre del producto, define su tamaño, peso de la fuente y márgenes */
@@ -55,4 +59,11 @@
 /*  valor numérico de la valoración, define el tamaño de la fuente */
 .ratingValue {
     font-size: 10px;
+}
+
+
+.iconFavorites{
+    position: absolute;
+    top: -10px;
+    right: 18px;
 }

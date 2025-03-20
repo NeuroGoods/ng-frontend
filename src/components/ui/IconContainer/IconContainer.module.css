@@ -57,3 +57,10 @@
 .apple:active { background-color: black; }
 .facebook:active { background-color: #00376b; }
 .like:active .iconImg{ color: red; }
+
+.iconFavorites {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+}

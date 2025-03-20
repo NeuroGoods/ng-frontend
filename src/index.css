@@ -1,13 +1,78 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root {
-  --primary: #58A19B;
-  --secondary: #0C2745;
-  --tertiary: #CFE2A5;
-  --details: #F6CC42;
-  --background: #FDFBF5;
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 320px;
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--background);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--tertiary);
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.price span {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--secondary);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.location {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  color: var(--secondary);
+}
+
+.icon {
+  margin-right: 5px;
+  color: var(--secondary);
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.star {
+  color: var(--details);
+  font-size: 14px;
+  margin-right: 2px;
+}
+
+.ratingValue {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--secondary);
+  margin-left: 4px;
 }

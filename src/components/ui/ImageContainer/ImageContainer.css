@@ -1,0 +1,7 @@
+.container {
+    background-color: var(--background);
+    max-width: 415px;
+    min-height: 388px;
+    display: flex;
+  }
+  
