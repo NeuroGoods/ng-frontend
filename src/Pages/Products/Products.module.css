@@ -1,0 +1,22 @@
+.productsPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .productsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    justify-items: center;
+    align-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .noProducts {
+    text-align: center;
+    font-size: 18px;
+    color: gray;
+  }

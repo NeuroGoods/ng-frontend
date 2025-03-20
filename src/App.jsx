@@ -1,4 +1,5 @@
 import "./App.css";
+import {useEffect} from "react";
 import Navbar from "./components/ui/Navbar/Navbar";
 import Header from "./components/ui/Header/Header";
 import { Route, Routes, Navigate } from "react-router-dom";
@@ -10,21 +11,19 @@ import PublishProduct from "./Pages/PublishProduct/PublishProduct";
 import Favorites from "./Pages/Favorites/Favorites";
 
 function App() {
-  return (
-    <>
-    {/* <Header /> */}
-      <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
-        <Route path="/favorites" element={<Favorites />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/product-details" element={<ProductDetails />} />
-        <Route path="/products" element={<Products />} /> 
-        <Route path="/publish-product" element={<PublishProduct />} />
-        {/* <Route path="*" element={<Navigate to="/" />} /> */}
-      </Routes>
-     {/* <Navbar /> */}
-    </>
-  );
+    return (
+        <>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/favorites" element={<Favorites />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/product-details" element={<ProductDetails />} />
+                <Route path="/products" element={<Products />} />
+                <Route path="/publish-product" element={<PublishProduct />} />
+                <Route path="*" element={<Navigate to="/" />} />
+            </Routes>
+        </>
+    );
 }
 
 export default App;
