@@ -15,11 +15,11 @@ const icons = {
   like: FaHeart
 };
 
-const IconContainer = ({ variation = "bell", size = 48, onClick }) => {
+const IconContainer = ({ variation = "bell", size = 48, onClick, className="" }) => {
   const IconComponent = icons[variation] || FaBell;
 
   return (
-    <button className={`${styles.iconContainer} ${styles[variation]}`} onClick={onClick}>
+    <button className={`${styles.iconContainer} ${styles[variation]} ${className}`} onClick={onClick}>
       <IconComponent className={styles.iconImg} size={size} />
     </button>
   );

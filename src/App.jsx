@@ -3,8 +3,7 @@ import Button from "./components/ui/Button/Button";
 import IconContainer from "./components/ui/IconContainer/IconContainer";
 import Input from "./components/ui/Input/Input";
 import Navbar from './components/ui/Navbar/Navbar'
-import ProductCard from "./components/ui/ProductCard/ProductCard";
-
+import ProductCard from "./components/product/ProductCard/ProductCard";
 
 function App() {
   return (
@@ -19,6 +18,8 @@ function App() {
         rating={4}
       />
       <Navbar/>
+
+     
     </>
   );
 }
