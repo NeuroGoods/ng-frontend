@@ -3,8 +3,8 @@ import styles from "./CategoryNav.module.css";
 
 function CategoryNav({ activeCategory, setActiveCategory }) {
   const categories = [
-    { id: 1, name: "Sensory-Friendly" },
-    { id: 2, name: "Mas visitados" },
+    { id: "Alive", name: "Alive" },
+    { id: "Dead", name: "Dead" },
     { id: 3, name: "Organización" },
     { id: 4, name: "Recursos Didácticos" },
     { id: 5, name: "Regulación" },

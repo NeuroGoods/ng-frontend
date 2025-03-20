@@ -7,7 +7,8 @@ function ProductCard({ image, name, rating }) {
   // Recibe los props
   return (
     <div className={styles.productCard}>
-      <div className={styles.productImagePlaceholder}>
+      
+        <img className={styles.productImagePlaceholder} src={image} alt="" />
         <div className={styles.productInfoBox}>
           <IconContainer variation="like" className={styles.iconFavorites} />
           <h2 className={styles.productName}>{name || "Product"}</h2>
@@ -16,10 +17,8 @@ function ProductCard({ image, name, rating }) {
               {"⭐".repeat(rating) || "⭐⭐⭐⭐⭐"}
             </span>
             <span className={styles.ratingValue}>{rating || 5}</span>
-            
           </div>
         </div>
-      </div>
     </div>
   );
 }

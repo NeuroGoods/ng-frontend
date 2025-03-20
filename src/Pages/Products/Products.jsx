@@ -7,14 +7,14 @@ import styles from "./Products.module.css";
 const Products = () => {
     const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
-    const [activeCategory, setActiveCategory] = useState(1); // ID de la categoría activa
+    const [activeCategory, setActiveCategory] = useState("Alive"); // ID de la categoría activa
 
     // Obtener productos desde la API
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const data = await getProducts();
-                setProducts(data);
+                setProducts(data.results);
                 filterProducts(data, activeCategory);
             } catch (error) {
                 console.error("Error al obtener productos:", error);
@@ -26,12 +26,13 @@ const Products = () => {
     // Filtrar productos cuando cambie la categoría activa
     useEffect(() => {
         filterProducts(products, activeCategory);
+        console.log(activeCategory)
     }, [activeCategory, products]);
 
     const filterProducts = (allProducts, categoryId) => {
         if (!allProducts.length) return;
         const filtered = allProducts.filter(
-            (product) => product.categoryId === categoryId
+            (product) => product.status === categoryId
         );
         setFilteredProducts(filtered);
     };
@@ -44,7 +45,7 @@ const Products = () => {
             />
 
             <div className={styles.productsGrid}>
-                {filteredProducts.length > 0 ? (
+                {filteredProducts.length> 0 ? (
                     filteredProducts.map((product) => (
                         <ProductCard
                             key={product.id}

@@ -2,15 +2,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
   }
   
   .productsGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    justify-items: center;
+    align-content: center;
+    gap: 10px;
     width: 100%;
-    max-width: 1200px;
     margin-top: 20px;
   }
   
