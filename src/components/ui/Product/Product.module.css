@@ -1,79 +1,58 @@
-/* ProductCard.css */
-
-/* Contenedor principal */
-.product-card {
+/* tarjeta del producto, define el tamaño, bordes redondeados, sombra, y dirección de los elementos */
+.productCard {
     width: 250px;
-    height: 350px;
-    background-color: #e0e5ec; /* Color de fondo similar al de la imagen */
-    border-radius: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    overflow: hidden;
+    margin: 20px;
+    font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    align-items: center;
+}
+
+/* contenedor de la imagen, define el tamaño y el color de fondo del placeholder */
+.productImagePlaceholder {
+    width: 100%;
+    height: 200px;
+    background-color: #ccc;
+    border-radius: 10px 10px 0 0;
     overflow: hidden;
-    position: relative;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Contenedor de la imagen */
-  .image-container {
+}
+
+/* imagen, ajusta su tamaño y garantiza que cubra el área del contenedor sin distorsión */
+.productImage {
     width: 100%;
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Imagen del producto */
-  .product-image {
-    width: 70%;
-    height: auto;
-  }
-  
-  /* Información del producto */
-  .product-info {
+    height: 100%;
+    object-fit: cover;
+}
+
+/* contenedor de la información (nombre y rating), organiza los elementos verticalmente */
+.productInfoBox {
+    margin-top: 129px;
+    background-color: var(--secondary);
     padding: 10px;
-    width: 100%;
-    text-align: center;
-    background-color: #001b2e; /* Fondo oscuro para la parte inferior */
+    border-radius: 10px;
     color: white;
-  }
-  
-  /* Nombre del producto */
-  .product-name {
-    font-size: 1.2rem;
+    text-align: left;
+    display: block;
+}
+
+/* nombre del producto, define su tamaño, peso de la fuente y márgenes */
+.productName {
+    font-size: 11px;
     font-weight: bold;
-    margin: 0;
-    margin-bottom: 10px;
-  }
-  
-  /* Calificación del producto */
-  .product-rating {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Estrellas de la calificación */
-  .stars {
-    margin-right: 5px;
-  }
-  
-  /* Valor de la calificación */
-  .rating-value {
-    font-size: 1rem;
-  }
-  
-  /* Ícono del corazón */
-  .heart-icon {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-  }
-  
-  .heart-button {
-    background: transparent;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  
+    margin: 5px 0;
+}
+
+/* rating del producto, ajusta el tamaño de la fuente y el color de las estrellas */
+.productRating {
+    font-size: 16px;
+    color: #f39c12;
+    margin-top: 5px;
+}
+
+/*  valor numérico de la valoración, define el tamaño de la fuente */
+.ratingValue {
+    font-size: 10px;
+}

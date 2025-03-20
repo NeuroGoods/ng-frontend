@@ -1,26 +1,25 @@
-import React from 'react'
+import React from "react";
 import styles from "./Product.module.css";
 
-const Product = ({ image, name, rating }) => {
+
+function Product({ image, name, rating }) {
+  // Recibe los props
   return (
-    <div className="product-card">
-      <div className="image-container">
-        <img 
-          src={image} // Usa la imagen pasada como prop
-          alt={name} // Usa el nombre del producto como alt para la imagen
-          className="product-image"
-        />
-      </div>
-      <div className="product-info">
-        <h2 className="product-name">{name}</h2>
-        <div className="product-rating">
-          <span className="stars">{"⭐".repeat(5)}</span> {/* Muestra 5 estrellas */}
-          <span className="rating-value">{rating}</span>
+    <div className={styles.productCard}>
+      <div className={styles.productImagePlaceholder}>
+        <div className={styles.productInfoBox}>
+          <h2 className={styles.productName}>{name || "Product"}</h2>
+          <div className={styles.productRating}>
+            <span className={styles.stars}>
+              {"⭐".repeat(rating) || "⭐⭐⭐⭐⭐"}
+            </span>
+            <span className={styles.ratingValue}>{rating || 5}</span>
+            
+          </div>
         </div>
       </div>
-
     </div>
-  )
+  );
 }
 
-export default Product
+export default Product;
