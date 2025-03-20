@@ -1,0 +1,44 @@
+.input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #7e7b7b;
+    border-radius: 1.5rem;
+    outline: none;
+    background-color: #6b6c6e;
+    color: #333;
+    transition: border-color 0.3s ease;
+  }
+  
+
+  
+  .input::placeholder {
+    color: rgb(0, 0, 0, 0.34);
+  }
+  
+  
+  .label {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .inputValue {
+    margin-top: 0.5rem;
+    color: #7e7b7b;
+  }
+  
+
+  .product-input{
+    background-color: var(--tertiary);
+  }
+
+  .login-input{
+    background-color: var(--details);
+  }
+
+  .search-input{
+    background-color: rgb(202, 201, 201);
+  }
+
+
+
