@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./ProductCard.module.css";
+import styles from "./ContainerProductDetail.module.css";
 import { FaMapMarkerAlt, FaStar } from "react-icons/fa";
 
 const ProductCard = () => {
