@@ -1,9 +1,10 @@
 import { axiosClient } from "./axios";
+import axios from "axios";
 
 // Obtener todos los productos
 export const getProducts = async () => {
   try {
-    const response = await axiosClient.get("/api/products");
+    const response = await axios.get("http://127.0.0.1:8000/api/products")
     return response.data;
   } catch (error) {
     console.error("Error al obtener productos:", error);
