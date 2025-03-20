@@ -1,0 +1,10 @@
+.navbar{
+    display: flex;
+    border-radius: 50px;
+    width: 385px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--background);
+    box-shadow: 0px 0 16px rgba(0, 0, 0, 0.2);
+}

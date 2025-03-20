@@ -2,6 +2,7 @@ import './App.css'
 import Button from './components/ui/Button/Button'
 import IconContainer from './components/ui/IconContainer/IconContainer'
 import Input from './components/ui/Input/Input'
+import Navbar from './components/ui/Navbar/Navbar'
 import Product from './components/ui/Product/Product'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <IconContainer variation='like'/>
       <Input variation='product-input'/>
       <Product/>
+      <Navbar/>
     </>
   )
 }
