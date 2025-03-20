@@ -8,7 +8,7 @@ const ProductCarousel = () => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 400,
     slidesToShow: 1, // Solo una imagen visible
     slidesToScroll: 1,
     autoplay: true,
