@@ -3,26 +3,26 @@ import "./ContainerProductDetail.css"; // ✅ Asegúrate de que está bien escri
 
 import { FaMapMarkerAlt, FaStar } from "react-icons/fa";
 
-const ProductCard = () => {
+const ContainerProductDetail = ({id, name, rating, location="N/A", price=30}) => {
   return (
     <div className="card">
       <div className="content">
-        <h3 className="title">Producto</h3>
-        <p className="price">$40<span>/unidad</span></p>
+        <h3 className="title">{name}</h3>
+        <p className="price">{price}<span>€</span></p>
       </div>
       <div className="footer">
         <p className="location">
-          <FaMapMarkerAlt className="icon" /> Madrid, España
+          <FaMapMarkerAlt className="icon" />{location}
         </p>
         <div className="rating">
           {[...Array(5)].map((_, i) => (
             <FaStar key={i} className="star" />
           ))}
-          <span className="ratingValue">4.9</span>
+          <span className="ratingValue">{rating}</span>
         </div>
       </div>
     </div>
   );
 };
 
-export default ProductCard;
+export default ContainerProductDetail;

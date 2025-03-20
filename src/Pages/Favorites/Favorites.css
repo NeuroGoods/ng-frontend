@@ -1,3 +1,22 @@
-.h1{
-    color:aquamarine
-}
+.product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre los elementos */
+    align-items: center; /* Centra los elementos si el contenedor es más grande */
+  }
+  
+  .product-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%; /* Asegura que el contenido ocupe todo el ancho */
+    max-width: 400px; /* Ajusta este valor según el tamaño deseado */
+  }
+  
+  .separator {
+    width: 83%;
+    height: 2px;
+    background-color: #58A19B;
+    margin-right: 22px; /* Ajusta el valor para recortar más o menos */
+  }
+  
