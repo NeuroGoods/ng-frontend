@@ -6,8 +6,7 @@ function App() {
 
   return (
     <>
-      <Button onClick="" variation='' type='button' text="Increment" />
-      
+      <Button onClick="" variation='light' type='button' text="Contactar" />
     </>
   )
 }
