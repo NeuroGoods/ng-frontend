@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import ContainerSection from "../../components/ui/ImageContainer/ImageContainer";
+
+
 
 const Favorites = () => {
   return (
-    <div>Favorites</div>
-  )
-}
+    <div>
+      Favorites
+      <ContainerSection />
+    </div>
+  );
+};
 
-export default Favorites
+export default Favorites;

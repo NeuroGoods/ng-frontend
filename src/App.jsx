@@ -9,20 +9,16 @@ import PublishProduct from "./Pages/PublishProduct/PublishProduct";
 import Home from "./Pages/Home/Home";
 import Favorites from "./Pages/Favorites/Favorites";
 
-
-
 function App() {
   return (
     <>
-      <Header />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/favorites" element={<Favorites />} />
-        <Route path="/login" element={<Login/>}/>
+        <Route path="/login" element={<Login />} />
         <Route path="/product-details" element={<ProductDetails />} />
-        <Route path="/products" element={<Products/>}/>
-        <Route path="/publish-product" element={<PublishProduct/>}/>
+        <Route path="/products" element={<Products />} />
+        <Route path="/publish-product" element={<PublishProduct />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       <Navbar />
