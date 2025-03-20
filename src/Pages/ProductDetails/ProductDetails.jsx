@@ -27,10 +27,11 @@ const ProductDetailsPage = () => {
         <Button variation="light" text = "contactar"/>
         <Button variation="primary" text = "comprar"/>
         </div>
-  
-  
+        </div>
     </>
-  )
+  );
 }
+
+
   
 export default ProductDetailsPage;
