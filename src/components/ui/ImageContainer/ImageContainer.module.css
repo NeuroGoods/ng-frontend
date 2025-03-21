@@ -1,6 +1,6 @@
 .container {
   background-color: var(--background);
-  height: 400px; 
+  height: 200px; 
   display: flex;
   justify-content: center;
   align-items: center;

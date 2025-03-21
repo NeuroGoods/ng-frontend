@@ -10,10 +10,14 @@ const Header = () => {
     navigate('/')
   }
 
+  const handleUserClick = () => {
+    navigate('/login')
+  }
+
   return (
     <div className={styles.header}>
         <img className={styles.logo} src={logo} alt="logo" onClick={handleLogoClick} />
-        <button className={styles.userIcon}><img src={userIcon} alt="" /></button>
+        <button className={styles.userIcon}><img src={userIcon} alt="" onClick={handleUserClick}/></button>
     </div>
   )
 }

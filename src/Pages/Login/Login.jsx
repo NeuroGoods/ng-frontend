@@ -7,8 +7,8 @@ import IconContainer from "../../components/ui/IconContainer/IconContainer";
 const Login = () => {
     return (
         <div className={styles.loginPage}>
-            <ImageContainer />
-            <h2>¡Bienvenide!</h2>
+            <ImageContainer imgPath={"https://viajarporescocia.com/contenido/uploads/HIGHLANDS_principal-1.jpg"}/>
+            <h2 style={{marginBottom:"10px"}}>¡Bienvenide!</h2>
             <form action="">
                 <Input variation="login" placeHolder="Email" type="email"/>
                 <Input variation="login" placeHolder="Contraseña" type="password"/>
