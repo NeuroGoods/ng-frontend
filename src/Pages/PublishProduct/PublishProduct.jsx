@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FaMapMarkerAlt, FaImage } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import Button from "../../components/ui/Button/Button";
 import { createProduct, getProducts } from "../../api/apiService";
 import "./PublishProduct.css";
@@ -25,7 +25,7 @@ const PublishProduct = () => {
     price: "",
     stock: "",
     description: "",
-    image: null,
+    image: "",
     categories: [],
   });
 
@@ -73,8 +73,8 @@ const PublishProduct = () => {
       validationErrors.description = "⚠ La descripción debe tener máximo 500 caracteres.";
     }
 
-    if (!formData.image) {
-      validationErrors.image = "⚠ Debes subir una imagen.";
+    if (!formData.image.trim()) {
+      validationErrors.image = "⚠ Debes proporcionar una URL de imagen.";
     }
 
     setErrors(validationErrors);
@@ -83,16 +83,6 @@ const PublishProduct = () => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: sanitizeInput(e.target.value) });
-  };
-
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file && file.size > 5 * 1024 * 1024) {
-      setErrors((prev) => ({ ...prev, image: "⚠ La imagen no debe superar los 5MB." }));
-    } else {
-      setErrors((prev) => ({ ...prev, image: "" }));
-      setFormData({ ...formData, image: file });
-    }
   };
 
   const handleCategoryToggle = (category) => {
@@ -129,7 +119,7 @@ const PublishProduct = () => {
     formDataToSend.append("description", formData.description);
     formDataToSend.append("price", formData.price);
     formDataToSend.append("stock", formData.stock);
-    formDataToSend.append("image", formData.image);
+    formDataToSend.append("image", formData.image); // Ahora es string
     categoryIDs.forEach((id) => {
       formDataToSend.append("category_id[]", id);
     });
@@ -157,7 +147,7 @@ const PublishProduct = () => {
         price: "",
         stock: "",
         description: "",
-        image: null,
+        image: "",
         categories: [],
       });
       setErrors({});
@@ -216,14 +206,17 @@ const PublishProduct = () => {
         </div>
 
         <div style={{ height: "20px" }}></div>
-        <div className="image-upload">
-          <label className="upload-button">
-            Subir imagen
-            <input type="file" onChange={handleFileChange} hidden />
-          </label>
-          <FaImage className="image-icon" />
+        <div className="form-group">
+          <label>URL de la imagen:</label>
+          <input
+            type="text"
+            name="image"
+            value={formData.image}
+            onChange={handleChange}
+            placeholder="https://ruta-a-la-imagen.com/imagen.jpg"
+          />
+          {errors.image && <p className="error">{errors.image}</p>}
         </div>
-        {errors.image && <p className="error">{errors.image}</p>}
 
         <div style={{ height: "20px" }}></div>
         <label>Danos una breve descripción de tu producto:</label>
