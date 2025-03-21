@@ -196,6 +196,7 @@ const PublishProduct = () => {
           <input
             type="text"
             name="image"
+            placeholder="URL de la imagen"
             onChange={handleChange}
           />
           {errors.image && <p className="error">{errors.image}</p>}
@@ -250,44 +251,3 @@ const PublishProduct = () => {
 
 export default PublishProduct;
 
-.form-container {
-  background-color: #fefefe;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
-}
-
-.category-button {
-  border: 1px solid var(--primary);
-  padding: 8px 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  background: white;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.category-button:hover {
-  background-color: var(--primary);
-  color: white;
-}
-
-.category-button.selected {
-  background-color: var(--primary);
-  color: white;
-}
-
-.status-message.success {
-  color: green;
-}
-
-.status-message.error {
-  color: red;
-}
-
-.button-container {
-  margin-top: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
