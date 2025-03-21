@@ -16,11 +16,11 @@ const ProductCarousel = () => {
   };
 
   const images = [
-    "https://via.placeholder.com/400",
-    "https://via.placeholder.com/401",
-    "https://via.placeholder.com/402",
-    "https://via.placeholder.com/403",
-    "https://via.placeholder.com/404",
+    "https://plus.unsplash.com/premium_photo-1709579654090-3f3ca8f8416b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bmF0dXJhbGV6YSUyMHBhaXNhamV8ZW58MHx8MHx8fDA%3D",
+    "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?cs=srgb&dl=pexels-souvenirpixels-417074.jpg&fm=jpg",
+    "https://www.dzoom.org.es/wp-content/uploads/2022/03/mis-fotografias-paisaje-favoritas-07-810x540.jpg",
+    "https://mott.pe/noticias/wp-content/uploads/2019/03/los-50-paisajes-maravillosos-del-mundo-para-tomar-fotos.jpg",
+    "https://cdn.shortpixel.ai/spai/q_lossless+w_1082+to_auto+ret_img/independent-photo.com/wp-content/uploads/2022/02/Yifeng-Ding-scaled.jpeg",
   ];
 
   return (

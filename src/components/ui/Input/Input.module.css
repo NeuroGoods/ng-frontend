@@ -28,15 +28,15 @@
   }
   
 
-  .product-input{
+  .product{
     background-color: var(--tertiary);
   }
 
-  .login-input{
+  .login{
     background-color: var(--details);
   }
 
-  .search-input{
+  .search{
     background-color: rgb(202, 201, 201);
   }
 
