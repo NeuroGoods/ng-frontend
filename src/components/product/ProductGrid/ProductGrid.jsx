@@ -37,20 +37,20 @@ const ProductGrid = ({ limit = 10, activeCategory = "Alive" }) => {
     return (
         <div className={styles.productsGrid}>
             
-        {/* //     {filteredProducts.length > 0 ? (
-        //         filteredProducts.map((product) => (
-        //             <ProductCard
-        //                 key={product.id}
-        //                 image={product.image}
-        //                 name={product.name}
-        //                 rating={product.rating}
-        //             />
-        //         ))
-        //     ) : (
-        //         <p className={styles.noProducts}>
-        //             No hay productos en esta categoría.
-        //         </p>
-        //     )} */}
+        {filteredProducts.length > 0 ? (
+            filteredProducts.map((product) => (
+                <ProductCard
+                    key={product.id}
+                    image={product.image}
+                    name={product.name}
+                    rating={product.rating}
+                />
+            ))
+        ) : (
+            <p className={styles.noProducts}>
+                No hay productos en esta categoría.
+            </p>
+        )}
         </div>
     );
 };
