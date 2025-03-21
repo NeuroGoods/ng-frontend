@@ -1,38 +1,122 @@
 .pageContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 20px;
-  }
-  
-  .card {
-    background: white;
-    border-radius: 20px;
-    padding: 20px;
-    width: 90%;
-    max-width: 400px;
-  }
-  
-  .imageContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #cbd5e1;
-    height: 200px;
-    border-radius: 12px;
-  }
-  
-  .image {
-    width: 100px;
-    height: 100px;
-  }
-  
-  .quantityContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 15px 0;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Tarjeta del producto */
+.card {
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 30px 30px;
+}
+
+/* Contador de cantidad y entrega */
+.detailsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quantityContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0px;
+}
+
+
+
+.quantityButton {
+  background-color: var(--tertiary);
+  border: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 8px 8px;
+}
+
+.quantity {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.time {
+  font-size: 14px;
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Descripción */
+.description {
+  margin-top: 10px;
+}
+
+.description h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--secondary);
+
+}
+
+.description p {
+  font-size: 14px;
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+/* Botones de acción */
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.buttonContainer button {
+  width: 48%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.buttonContainer .light {
+  background-color: var(--text-light);
+  color: var(--secondary);
+  border: 2px solid var(--secondary);
+}
+
+.buttonContainer .primary {
+  background-color: var(--primary);
+  color: var(--text-light);
+  border: none;
+}
+
+/* Barra inferior */
+.bottomBar {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--text-light);
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 20px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.iconButton {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--secondary);
+}
