@@ -17,6 +17,7 @@ const ProductDetailsPage = () => {
             try {
                 const data = await getProductById(id);
                 setProduct(data);
+                console.log(data);
             } catch (error) {
                 console.error("Error al obtener el producto:", error);
             }
