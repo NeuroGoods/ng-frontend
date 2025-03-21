@@ -3,43 +3,51 @@ import ProductCard from "../ProductCard/ProductCard";
 import { getProducts } from "../../../api/apiService";
 import styles from "./ProductGrid.module.css";
 
-const ProductGrid = ({ limit = 10, activeCategory = "Alive" }) => {
+const ProductGrid = ({ limit = 10, activeCategory = null }) => {
     const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
 
     // Obtener productos desde la API
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchProducts = async () => {
             try {
                 const data = await getProducts();
-                setProducts(data.results);
-                filterProducts(data.results, activeCategory);
+                "✅ Productos obtenidos desde la API:", data;
+                setProducts(data);
             } catch (error) {
-                console.error("Error al obtener productos:", error);
+                console.error(
+                    "❌ Error al obtener productos desde la API:",
+                    error
+                );
             }
         };
-        fetchData();
+
+        fetchProducts();
     }, []);
 
-    // Filtrar productos cuando cambie la categoría activa
+    //Filtrar productos cuando cambie la categoría activa
     useEffect(() => {
         filterProducts(products, activeCategory);
     }, [activeCategory, products]);
 
     const filterProducts = (allProducts, categoryId) => {
         if (!allProducts.length) return;
-        const filtered = allProducts
-            .filter((product) => product.status === categoryId)
-            .slice(0, limit); // Limitar la cantidad de productos mostrados
-        setFilteredProducts(filtered);
+
+        const filtered = categoryId
+            ? allProducts.filter(
+                  (product) => product.category_id === categoryId
+              )
+            : allProducts;
+
+        setFilteredProducts(filtered.slice(0, limit));
     };
 
     return (
         <div className={styles.productsGrid}>
-            
             {filteredProducts.length > 0 ? (
                 filteredProducts.map((product) => (
                     <ProductCard
+                        id={product.id}
                         key={product.id}
                         image={product.image}
                         name={product.name}

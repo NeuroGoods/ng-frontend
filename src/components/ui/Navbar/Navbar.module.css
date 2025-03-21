@@ -1,4 +1,7 @@
 .navbar{
+    position: fixed;
+    bottom: 1% ;
+    left: 5%;
     display: flex;
     border-radius: 50px;
     width: 385px;

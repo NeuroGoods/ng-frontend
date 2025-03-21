@@ -1,11 +1,56 @@
-import axios from 'axios';
+import axios from "axios";
 
-export const axiosClient = axios.create({
-  baseURL: 'http://localhost:8000', // Ensure it matches Laravel's base URL
-  withCredentials: true,
-  withXSRFToken: true,
-  headers: {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json',
-  },
-});
+// Obtener todos los productos
+export const getProducts = async () => {
+  try {
+    const response = await axios.get("http://localhost:8000/api/products")
+    return response.data;
+  } catch (error) {
+    console.error("Error al obtener productos:", error);
+    throw error;
+  }
+};
+
+// Obtener un producto por ID
+export const getProductById = async (id) => {
+  try {
+    const response = await axios.get(`http://localhost:8000/api/products/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error(`Error al obtener producto con ID ${id}:`, error);
+    throw error;
+  }
+};
+
+// Crear un nuevo producto
+export const createProduct = async (productData) => {
+  try {
+    const response = await axios.post("http://localhost:8000/api/products", productData);
+    return response.data;
+  } catch (error) {
+    console.error("Error al crear producto:", error);
+    throw error;
+  }
+};
+
+// Actualizar un producto
+export const updateProduct = async (id, productData) => {
+  try {
+    const response = await axios.put(`http://localhost:8000/api/products/${id}`, productData);
+    return response.data;
+  } catch (error) {
+    console.error(`Error al actualizar producto con ID ${id}:`, error);
+    throw error;
+  }
+};
+
+// Eliminar un producto
+export const deleteProduct = async (id) => {
+  try {
+    const response = await axios.delete(`http://localhost:8000/api/products/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error(`Error al eliminar producto con ID ${id}:`, error);
+    throw error;
+  }
+};

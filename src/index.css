@@ -6,7 +6,8 @@
 }
 
 main{
-  padding-top: 100px; ;
+  padding-top: 83px;
+  padding-bottom: 120px;
 }
 
 * {
@@ -21,5 +22,5 @@ main{
   --secondary: #0C2745;
   --tertiary: #CFE2A5;
   --details: #F6CC42;
-  --background: #F8F4D9;
+  --background: #f1f9f7;
 }

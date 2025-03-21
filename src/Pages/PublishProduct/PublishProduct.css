@@ -1,0 +1,107 @@
+.form-container {
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: var(--font-family-base);
+}
+
+.product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.2s ease;
+  color: var(--text-dark);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.error {
+  color: var(--error);
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.status-message.success {
+  color: var(--success);
+  font-weight: 500;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.status-message.error {
+  color: var(--error);
+  font-weight: 500;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.categories {
+  border: solid 1px var(--primary);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.category-button {
+  border: 1px solid var(--primary);
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  background: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.category-button:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.category-button.selected {
+  background-color: var(--primary);
+  color: white;
+}
+
+.button-container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

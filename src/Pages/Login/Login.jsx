@@ -7,18 +7,19 @@ import IconContainer from "../../components/ui/IconContainer/IconContainer";
 const Login = () => {
     return (
         <div className={styles.loginPage}>
-            <ImageContainer />
-            <h2>¡Bienvenide!</h2>
+            <ImageContainer imgPath={"https://viajarporescocia.com/contenido/uploads/HIGHLANDS_principal-1.jpg"}/>
+            <h2 style={{marginBottom:"10px"}}>¡Bienvenide!</h2>
             <form action="">
-                <Input variation="login" placeHolder="Email"/>
-                <Input variation="login" placeHolder="Contraseña"/>
-                <p style={{color:"blue"}}>¿Olvidaste la contraseña?</p>
+                <Input variation="login" placeHolder="Email" type="email"/>
+                <Input variation="login" placeHolder="Contraseña" type="password"/>
+                <p style={{color:"blue", margin: "20px 0px 30px 0px", cursor:"pointer"}}>¿Olvidaste la contraseña?</p>
                 <Button text="Login" variation="big"/>
-                <p>
-                    ¿No estas registrado? <span>Registrate ahora</span>
+                <p className={styles.register}>
+                    ¿No estas registrado? <span style={{color:"blue", cursor:"pointer"}}>Registrate ahora</span>
                 </p>
             </form>
             <div className={styles.socialLogin}>
+                <hr />
                 <p>O continuar con</p>
                 <div className={styles.socialIcons}>
                     <IconContainer variation="google" />

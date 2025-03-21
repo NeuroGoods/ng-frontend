@@ -1,5 +1,5 @@
 import "./App.css";
-import {useEffect} from "react";
+import { useEffect } from "react";
 import Navbar from "./components/ui/Navbar/Navbar";
 import Header from "./components/ui/Header/Header";
 import { Route, Routes, Navigate } from "react-router-dom";
@@ -15,19 +15,25 @@ import "slick-carousel/slick/slick-theme.css";
 function App() {
     return (
         <>
-        <Header />
-        <main>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/favorites" element={<Favorites />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/product-details" element={<ProductDetails />} />
-                <Route path="/products" element={<Products />} />
-                <Route path="/publish-product" element={<PublishProduct />} />
-                <Route path="*" element={<Navigate to="/" />} />
-            </Routes>
-        </main>
-        <Footer />
+            <Header />
+            <main>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/favorites" element={<Favorites />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route
+                        path="/product-details/:id"
+                        element={<ProductDetails />}
+                    />
+                    <Route path="/products" element={<Products />} />
+                    <Route
+                        path="/publish-product"
+                        element={<PublishProduct />}
+                    />
+                    <Route path="*" element={<Navigate to="/" />} />
+                </Routes>
+            </main>
+            <Navbar />
         </>
     );
 }
