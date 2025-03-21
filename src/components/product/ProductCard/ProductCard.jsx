@@ -27,6 +27,7 @@ function ProductCard({ id, image, name, rating }) {
     };
 
     const handleCardClick = () => {
+        localStorage.setItem("lastViewedProductId", id);
         navigate(`/product-details/${id}`);
     };
 

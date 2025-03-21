@@ -7,7 +7,8 @@ import ContainerProductDetail from "../../components/ui/ContainerProductDetail/C
 import Button from "../../components/ui/Button/Button";
 
 const ProductDetailsPage = () => {
-    const { id } = useParams();
+    const params = useParams();
+    const id = params.id || localStorage.getItem("lastViewedProductId");
     const [product, setProduct] = useState(null);
     const [quantity, setQuantity] = useState(1); // Estado para el contador
 
