@@ -115,6 +115,7 @@ const PublishProduct = () => {
     const formDataToSend = new FormData();
     formDataToSend.append("name", formData.name);
     formDataToSend.append("description", formData.description);
+    formDataToSend.append("image", formData.image);
     formDataToSend.append("price", formData.price);
     formDataToSend.append("stock", formData.stock);
 
