@@ -13,6 +13,7 @@ const ProductGrid = ({ limit = 10, activeCategory = "Alive" }) => {
           try {
             const data = await getProducts();
             console.log("✅ Productos obtenidos desde la API:", data);
+            setProducts(data);
           } catch (error) {
             console.error("❌ Error al obtener productos desde la API:", error);
           }
