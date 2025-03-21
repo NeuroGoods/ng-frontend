@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <> 
     <div style={{display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem", padding: "0 2rem"}}>
-    <FaSearch/>
+    <FaSearch style={{marginTop:"25px", width:"60px", marginRight:"-10px"}}/>
     <Input variation="search"/>
     </div>
     <ProductCarousel/>
