@@ -8,7 +8,7 @@ import Button from "../../components/ui/Button/Button";
 
 const ProductDetailsPage = () => {
     const params = useParams();
-    const id = params.id || localStorage.getItem("lastViewedProductId");
+    const id = localStorage.getItem("lastViewedProductId");
     const [product, setProduct] = useState(null);
     const [quantity, setQuantity] = useState(1); // Estado para el contador
 
