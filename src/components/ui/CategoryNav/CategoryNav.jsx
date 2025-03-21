@@ -3,6 +3,7 @@ import styles from "./CategoryNav.module.css";
 
 function CategoryNav({ activeCategory, setActiveCategory }) {
   const categories = [
+    { id: null, name: "Todos" },
     { id: 1, name: "Sensory" },
     { id: 2, name: "Organización" },
     { id: 3, name: "Recursos Didácticos" },
