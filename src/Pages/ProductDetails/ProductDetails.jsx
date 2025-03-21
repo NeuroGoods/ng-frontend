@@ -63,7 +63,12 @@ const ProductDetailsPage = () => {
     const handleEditSubmit = async (e) => {
         e.preventDefault();
         try {
-            await updateProduct(id, editedProduct);
+            const formData = new FormData();
+            formData.append("name", editedProduct.name);
+            formData.append("description", editedProduct.description);
+            formData.append("price", editedProduct.price);
+            formData.append("image", editedProduct.image);
+            await updateProduct(id, formData);
             setShowModal(false);
             window.location.reload();
         } catch (error) {
