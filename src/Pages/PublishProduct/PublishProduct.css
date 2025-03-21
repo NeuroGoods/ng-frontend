@@ -1,0 +1,128 @@
+.form-container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .product-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .product-form input,
+  .product-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    font-weight: bold;
+    margin-right: 10px;
+    min-width: 80px;
+  }
+
+  .form-group input {
+    background-color: var(--tertiary);
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+  }
+
+  .location-box {
+    display: flex;
+    align-items: center;
+    background-color: var(--tertiary);
+    padding: 8px;
+    border-radius: 20px;
+    flex: 1;
+  }
+  .location-icon {
+    margin-right: 5px;
+    color: gray;
+  }
+
+  .image-upload {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .upload-button {
+    background-color: var(--primary);
+    height: 48px;
+    padding: 10px 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 20px;
+  }
+
+  .image-icon {
+    color: #58A19B;
+    font-size: 50px;
+  }
+
+  .product-form textarea {
+    resize: vertical;
+    height: 80px;
+    border-radius: 20px;
+  }
+
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .category-button {
+    border: 1px solid var(--primary);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: white;
+  }
+
+  .category-button.selected {
+    background-color: var(--primary);
+    color: white;
+  }
+
+  .submit-button:disabled {
+    background-color: gray;
+  }
+
+  .button-container {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-item: center;
+  }
+
+  .status-message {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  .error {
+    color: red;
+    font-size: 0.875em;
+    margin-top: 5px;
+  }
