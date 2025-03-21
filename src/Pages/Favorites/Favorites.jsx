@@ -1,3 +1,4 @@
+ // Mi trauma favorito -  grupo 13 x 100pre - Saray 
 import React, { useState, useEffect } from "react";
 import ContainerProductDetail from "../../components/ui/ContainerProductDetail/ContainerProductDetail";
 import ImageContainer from "../../components/ui/ImageContainer/ImageContainer";
