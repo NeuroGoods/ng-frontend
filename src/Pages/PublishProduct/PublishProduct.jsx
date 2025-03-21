@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaMapMarkerAlt, FaImage } from "react-icons/fa";
 import Button from "../../components/ui/Button/Button";
-import { createProduct } from "../../api/apiService";
+import { createProduct, getProducts } from "../../api/apiService";
 import "./PublishProduct.css";
 
 const categoriesList = [
@@ -32,6 +32,19 @@ const PublishProduct = () => {
   const [errors, setErrors] = useState({});
   const [_loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const data = await getProducts();
+        console.log("✅ Productos obtenidos desde la API:", data);
+      } catch (error) {
+        console.error("❌ Error al obtener productos desde la API:", error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   const validateForm = () => {
     let validationErrors = {};
