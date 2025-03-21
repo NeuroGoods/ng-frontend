@@ -41,13 +41,12 @@ const ProductDetailsPage = () => {
 
     return (
         <div className={styles.pageContainer}>
-            <ImageContainer />
+            <ImageContainer imgPath={product.image} />
             <div className={styles.card}>
                 <ContainerProductDetail
                     id={product.id}
                     name={product.name}
                     rating={product.rating}
-                    location={product.location}
                     price={product.price}
                 />
                 <div className={styles.quantityContainer}>
