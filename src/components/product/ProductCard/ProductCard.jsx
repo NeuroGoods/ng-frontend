@@ -8,7 +8,8 @@ function ProductCard({ id, image, name, rating }) {
 
     const product = { id, image, name, rating }; // Datos del producto incluyendo ID
 
-    const handleLikeClick = () => {
+    const handleLikeClick = (e) => {
+        e.stopPropagation();
         let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
         // Verifica si el producto ya está guardado en favoritos por su ID
@@ -30,24 +31,26 @@ function ProductCard({ id, image, name, rating }) {
     };
 
     return (
-        <div className={styles.productCard} onClick={handleCardClick}>
-            <img
-                className={styles.productImagePlaceholder}
-                src={image}
-                alt={name}
+        <div className={styles.productCard}>
+            <IconContainer
+                variation="like"
+                className={styles.iconFavorites}
+                onClick={handleLikeClick}
             />
-            <div className={styles.productInfoBox}>
-                <IconContainer
-                    variation="like"
-                    className={styles.iconFavorites}
-                    onClick={handleLikeClick}
+            <div onClick={handleCardClick}>
+                <img
+                    className={styles.productImagePlaceholder}
+                    src={image}
+                    alt={name}
                 />
-                <h2 className={styles.productName}>{name || "Product"}</h2>
-                <div className={styles.productRating}>
-                    <span className={styles.stars}>
-                        {"⭐".repeat(rating) || "⭐⭐⭐⭐⭐"}
-                    </span>
-                    <span className={styles.ratingValue}>{rating || 5}</span>
+                <div className={styles.productInfoBox}>
+                    <h2 className={styles.productName}>{name || "Product"}</h2>
+                    <div className={styles.productRating}>
+                        <span className={styles.stars}>
+                            {"⭐".repeat(rating) || "⭐⭐⭐⭐⭐"}
+                        </span>
+                        <span className={styles.ratingValue}>{rating || 5}</span>
+                    </div>
                 </div>
             </div>
         </div>
