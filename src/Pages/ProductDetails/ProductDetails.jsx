@@ -82,7 +82,13 @@ const ProductDetailsPage = () => {
 
     return (
         <div className={styles.pageContainer}>
-            <ImageContainer imgPath={product.image} />
+            <div style={{ position: "relative", width: "100%" }}>
+                <ImageContainer imgPath={product.image} />
+                <div className={styles.actionButtons}>
+                    <Button variation="light" text="Editar" onClick={() => setShowModal(true)} />
+                    <Button variation="danger" text="Eliminar" onClick={handleDelete} />
+                </div>
+            </div>
             <div className={styles.card}>
                 <ContainerProductDetail
                     id={product.id}
@@ -112,8 +118,6 @@ const ProductDetailsPage = () => {
                     <div className={styles.buttonContainer}>
                     <Button variation="light" text="Contactar" />
                     <Button variation="primary" text="Comprar" />
-                    <Button variation="light" text="Editar" onClick={() => setShowModal(true)} />
-                    <Button variation="danger" text="Eliminar" onClick={handleDelete} />
                     </div>
                 </div>
             </div>
