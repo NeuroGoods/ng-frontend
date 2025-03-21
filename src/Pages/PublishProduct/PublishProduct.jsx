@@ -23,7 +23,7 @@ const PublishProduct = () => {
   const [formData, setFormData] = useState({
     name: "",
     price: "",
-    location: "Madrid, España",
+    stock: "",
     description: "",
     image: null,
     categories: [],
@@ -46,6 +46,12 @@ const PublishProduct = () => {
       validationErrors.price = "⚠ El precio es obligatorio.";
     } else if (!priceRegex.test(formData.price)) {
       validationErrors.price = "⚠ Formato de precio inválido (Ej: $40.50).";
+    }
+
+    if (!formData.stock.trim()) {
+      validationErrors.stock = "⚠ El stock es obligatorio.";
+    } else if (isNaN(formData.stock) || formData.stock < 0) {
+      validationErrors.stock = "⚠ Stock debe ser un número positivo.";
     }
 
     if (!formData.description.trim()) {
@@ -90,36 +96,53 @@ const PublishProduct = () => {
     if (!validateForm()) return;
     setLoading(true);
     setMessage("");
-    
-    // Construir objeto con los datos del formulario (sin la imagen)
-    const productData = {
-        name: formData.name,
-        price: formData.price,
-        location: formData.location,
-        description: formData.description,
-        categories: formData.categories,
+
+    // Mapeo de nombres a IDs de categorías
+    const categoryMap = {
+      "Sensory-Friendly": 1,
+      "Organización": 2,
+      "Recursos Didácticos": 3,
+      "Regulación": 4,
+      "Moda": 5,
     };
 
-    console.log("Producto a enviar:", productData); // Muestra el objeto en consola
+    // Crear array de IDs en lugar de strings
+    const categoryIDs = formData.categories
+      .map((cat) => categoryMap[cat])
+      .filter(Boolean);
+
+    const formDataToSend = new FormData();
+    formDataToSend.append("name", formData.name);
+    formDataToSend.append("description", formData.description);
+    formDataToSend.append("price", formData.price);
+    formDataToSend.append("stock", formData.stock);
+    formDataToSend.append("image", formData.image);
+    categoryIDs.forEach((id) => {
+      formDataToSend.append("category_id[]", id);
+    });
+
+    const debugObject = {
+      name: formData.name,
+      price: formData.price,
+      stock: formData.stock,
+      description: formData.description,
+      category_id: categoryIDs,
+    };
+
+    console.log("Objeto limpio a enviar (sin imagen):", debugObject);
+
+    for (let [key, value] of formDataToSend.entries()) {
+      console.log(`${key}: ${value}`);
+    }
 
     try {
-      const formDataToSend = new FormData();
-      formDataToSend.append("name", formData.name);
-      formDataToSend.append("price", formData.price);
-      formDataToSend.append("location", formData.location);
-      formDataToSend.append("description", formData.description);
-      formDataToSend.append("image", formData.image);
-      formData.categories.forEach((category) => {
-        formDataToSend.append("categories", category);
-      });
-
       await createProduct(formDataToSend);
       setMessage("✅ Producto subido con éxito");
 
       setFormData({
         name: "",
         price: "",
-        location: "Madrid, España",
+        stock: "",
         description: "",
         image: null,
         categories: [],
@@ -157,6 +180,18 @@ const PublishProduct = () => {
             placeholder="$40/unidad"
           />
           {errors.price && <p className="error">{errors.price}</p>}
+        </div>
+
+        <div className="form-group">
+          <label>Stock:</label>
+          <input
+            type="number"
+            name="stock"
+            value={formData.stock}
+            onChange={handleChange}
+            placeholder="Cantidad disponible"
+          />
+          {errors.stock && <p className="error">{errors.stock}</p>}
         </div>
 
         <div className="form-group">
