@@ -25,12 +25,12 @@ const PublishProduct = () => {
     price: "",
     stock: "",
     description: "",
-    image: "",
+    image: null,
     categories: [],
   });
 
   const [errors, setErrors] = useState({});
-  const [_loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
   useEffect(() => {
@@ -42,7 +42,6 @@ const PublishProduct = () => {
         console.error("❌ Error al obtener productos desde la API:", error);
       }
     };
-
     fetchProducts();
   }, []);
 
@@ -70,11 +69,15 @@ const PublishProduct = () => {
     if (!formData.description.trim()) {
       validationErrors.description = "⚠ La descripción no puede estar vacía.";
     } else if (formData.description.length > 500) {
-      validationErrors.description = "⚠ La descripción debe tener máximo 500 caracteres.";
+      validationErrors.description = "⚠ Máximo 500 caracteres.";
     }
 
-    if (!formData.image.trim()) {
-      validationErrors.image = "⚠ Debes proporcionar una URL de imagen.";
+    if (!formData.image) {
+      validationErrors.image = "⚠ Debes subir una imagen.";
+    }
+
+    if (formData.categories.length === 0) {
+      validationErrors.categories = "⚠ Selecciona al menos una categoría.";
     }
 
     setErrors(validationErrors);
@@ -82,15 +85,17 @@ const PublishProduct = () => {
   };
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: sanitizeInput(e.target.value) });
+    if (e.target.name === "image") {
+      setFormData({ ...formData, image: e.target.files[0] });
+    } else {
+      setFormData({ ...formData, [e.target.name]: sanitizeInput(e.target.value) });
+    }
   };
 
   const handleCategoryToggle = (category) => {
-    setFormData((prev) => ({
+    setFormData(prev => ({
       ...prev,
-      categories: prev.categories.includes(category)
-        ? prev.categories.filter((c) => c !== category)
-        : [...prev.categories, category],
+      categories: prev.categories[0] === category ? [] : [category]
     }));
   };
 
@@ -100,7 +105,6 @@ const PublishProduct = () => {
     setLoading(true);
     setMessage("");
 
-    // Mapeo de nombres a IDs de categorías
     const categoryMap = {
       "Sensory-Friendly": 1,
       "Organización": 2,
@@ -109,50 +113,42 @@ const PublishProduct = () => {
       "Moda": 5,
     };
 
-    // Crear array de IDs en lugar de strings
-    const categoryIDs = formData.categories
-      .map((cat) => categoryMap[cat])
-      .filter(Boolean);
-
     const formDataToSend = new FormData();
     formDataToSend.append("name", formData.name);
     formDataToSend.append("description", formData.description);
     formDataToSend.append("price", formData.price);
     formDataToSend.append("stock", formData.stock);
-    formDataToSend.append("image", formData.image); // Ahora es string
-    categoryIDs.forEach((id) => {
-      formDataToSend.append("category_id[]", id);
-    });
 
-    const debugObject = {
-      name: formData.name,
-      price: formData.price,
-      stock: formData.stock,
-      description: formData.description,
-      category_id: categoryIDs,
-    };
+    // Handle image file or URL
+    if (formData.image instanceof File) {
+      formDataToSend.append("image", formData.image);
+    } else {
+      formDataToSend.append("image", formData.image);
+    }
 
-    console.log("Objeto limpio a enviar (sin imagen):", debugObject);
-
-    for (let [key, value] of formDataToSend.entries()) {
-      console.log(`${key}: ${value}`);
+    // Handle single category
+    if (formData.categories.length > 0) {
+      const categoryID = categoryMap[formData.categories[0]];
+      if (categoryID) {
+        formDataToSend.append("category_id", categoryID);
+      }
     }
 
     try {
       await createProduct(formDataToSend);
       setMessage("✅ Producto subido con éxito");
-
       setFormData({
         name: "",
         price: "",
         stock: "",
         description: "",
-        image: "",
+        image: null,
         categories: [],
       });
       setErrors({});
     } catch (error) {
       console.error("❌ Error al subir producto", error);
+      setMessage("❌ Error al subir el producto");
     } finally {
       setLoading(false);
     }
@@ -160,7 +156,7 @@ const PublishProduct = () => {
 
   return (
     <div className="form-container">
-      <form className="product-form" onSubmit={handleSubmit}> {}
+      <form className="product-form" onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Nombre:</label>
           <input
@@ -198,57 +194,58 @@ const PublishProduct = () => {
         </div>
 
         <div className="form-group">
-          <label>Ubicación:</label>
-          <div className="location-box">
-            <FaMapMarkerAlt className="location-icon" />
-            <span>{formData.location}</span>
-          </div>
-        </div>
-
-        <div style={{ height: "20px" }}></div>
-        <div className="form-group">
-          <label>URL de la imagen:</label>
+          <label>Imagen del producto:</label>
           <input
-            type="text"
+            type="file"
             name="image"
-            value={formData.image}
+            accept="image/*"
             onChange={handleChange}
-            placeholder="https://ruta-a-la-imagen.com/imagen.jpg"
           />
           {errors.image && <p className="error">{errors.image}</p>}
         </div>
 
-        <div style={{ height: "20px" }}></div>
-        <label>Danos una breve descripción de tu producto:</label>
-        <div style={{ height: "20px" }}></div>
-        <textarea
-          name="description"
-          value={formData.description}
-          onChange={handleChange}
-          placeholder="Escribe aquí..."
-        />
-        {errors.description && <p className="error">{errors.description}</p>}
+        <div className="form-group">
+          <label>Descripción:</label>
+          <textarea
+            name="description"
+            value={formData.description}
+            onChange={handleChange}
+            placeholder="Escribe aquí..."
+          />
+          {errors.description && <p className="error">{errors.description}</p>}
+        </div>
 
-        <div style={{ height: "20px" }}></div>
-        <label>Agrega las categorías que apliquen:</label>
-        <div className="categories">
-          {categoriesList.map((category) => (
-            <button
-              key={category}
-              type="button"
-              className={`category-button ${formData.categories.includes(category) ? "selected" : ""}`}
-              onClick={() => handleCategoryToggle(category)}
-            >
-              {category}
-            </button>
-          ))}
+        <div className="form-group">
+          <label>Categorías:</label>
+          <div className="categories">
+            {categoriesList.map((category) => (
+              <button
+                key={category}
+                type="button"
+                className={`category-button ${
+                  formData.categories.includes(category) ? "selected" : ""
+                }`}
+                onClick={() => handleCategoryToggle(category)}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+          {errors.categories && <p className="error">{errors.categories}</p>}
         </div>
 
         <div className="button-container">
-          <Button type="submit" text="Subir producto" variation="big" />
+          <Button 
+            type="submit" 
+            text={loading ? "Subiendo..." : "Subir producto"} 
+            variation="big" 
+            disabled={loading}
+          />
         </div>
 
-        {message && <p className="status-message">{message}</p>}
+        {message && <p className={`status-message ${message.includes("✅") ? "success" : "error"}`}>
+          {message}
+        </p>}
       </form>
     </div>
   );
