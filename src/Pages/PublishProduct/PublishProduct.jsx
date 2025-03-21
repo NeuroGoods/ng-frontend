@@ -72,8 +72,8 @@ const PublishProduct = () => {
       validationErrors.description = "⚠ Máximo 500 caracteres.";
     }
 
-    if (!formData.image) {
-      validationErrors.image = "⚠ Debes subir una imagen.";
+    if (!formData.image || !/^https?:\/\/.+\.(jpg|jpeg|png|gif|webp)$/i.test(formData.image)) {
+      validationErrors.image = "⚠ Debes ingresar una URL válida de imagen (jpg, png, etc).";
     }
 
     if (formData.categories.length === 0) {
