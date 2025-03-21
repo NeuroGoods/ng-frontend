@@ -90,6 +90,17 @@ const PublishProduct = () => {
     if (!validateForm()) return;
     setLoading(true);
     setMessage("");
+    
+    // Construir objeto con los datos del formulario (sin la imagen)
+    const productData = {
+        name: formData.name,
+        price: formData.price,
+        location: formData.location,
+        description: formData.description,
+        categories: formData.categories,
+    };
+
+    console.log("Producto a enviar:", productData); // Muestra el objeto en consola
 
     try {
       const formDataToSend = new FormData();
