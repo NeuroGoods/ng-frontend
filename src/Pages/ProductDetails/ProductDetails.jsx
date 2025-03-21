@@ -18,7 +18,7 @@ const ProductDetailsPage = () => {
         name: "",
         description: "",
         price: "",
-        image: ""
+        image: "",
     });
     const navigate = useNavigate();
 
@@ -31,9 +31,9 @@ const ProductDetailsPage = () => {
                     name: data.name,
                     description: data.description,
                     price: data.price,
-                    image: data.image
+                    image: data.image,
                 });
-                console.log(data);
+                data;
             } catch (error) {
                 console.error("Error al obtener el producto:", error);
             }
@@ -85,8 +85,16 @@ const ProductDetailsPage = () => {
             <div style={{ position: "relative", width: "100%" }}>
                 <ImageContainer imgPath={product.image} />
                 <div className={styles.actionButtons}>
-                    <Button variation="light" text="Editar" onClick={() => setShowModal(true)} />
-                    <Button variation="danger" text="Eliminar" onClick={handleDelete} />
+                    <Button
+                        variation="light"
+                        text="Editar"
+                        onClick={() => setShowModal(true)}
+                    />
+                    <Button
+                        variation="danger"
+                        text="Eliminar"
+                        onClick={handleDelete}
+                    />
                 </div>
             </div>
             <div className={styles.card}>
@@ -116,53 +124,64 @@ const ProductDetailsPage = () => {
                     <h3>Descripción</h3>
                     <p>{product.description}</p>
                     <div className={styles.buttonContainer}>
-                    <Button variation="light" text="Contactar" />
-                    <Button variation="primary" text="Comprar" />
+                        <Button variation="light" text="Contactar" />
+                        <Button variation="primary" text="Comprar" />
                     </div>
                 </div>
             </div>
-        {showModal && (
-            <div className={styles.modalOverlay}>
-                <div className={styles.modalContent}>
-                    <h2>Editar producto</h2>
-                    <form onSubmit={handleEditSubmit} className={styles.editForm}>
-                        <input
-                            type="text"
-                            name="name"
-                            value={editedProduct.name}
-                            onChange={handleEditChange}
-                            placeholder="Nombre"
-                        />
-                        <input
-                            type="text"
-                            name="description"
-                            value={editedProduct.description}
-                            onChange={handleEditChange}
-                            placeholder="Descripción"
-                        />
-                        <input
-                            type="number"
-                            name="price"
-                            value={editedProduct.price}
-                            onChange={handleEditChange}
-                            placeholder="Precio"
-                        />
-                        <input
-                            type="text"
-                            name="image"
-                            value={editedProduct.image}
-                            onChange={handleEditChange}
-                            placeholder="URL de imagen"
-                        />
-                        <div className={styles.buttonContainer}>
-                            <Button variation="primary" text="Guardar cambios" type="submit" />
-                            <Button variation="light" text="Cancelar" onClick={() => setShowModal(false)} />
-                        </div>
-                    </form>
+            {showModal && (
+                <div className={styles.modalOverlay}>
+                    <div className={styles.modalContent}>
+                        <h2>Editar producto</h2>
+                        <form
+                            onSubmit={handleEditSubmit}
+                            className={styles.editForm}
+                        >
+                            <input
+                                type="text"
+                                name="name"
+                                value={editedProduct.name}
+                                onChange={handleEditChange}
+                                placeholder="Nombre"
+                            />
+                            <input
+                                type="text"
+                                name="description"
+                                value={editedProduct.description}
+                                onChange={handleEditChange}
+                                placeholder="Descripción"
+                            />
+                            <input
+                                type="number"
+                                name="price"
+                                value={editedProduct.price}
+                                onChange={handleEditChange}
+                                placeholder="Precio"
+                            />
+                            <input
+                                type="text"
+                                name="image"
+                                value={editedProduct.image}
+                                onChange={handleEditChange}
+                                placeholder="URL de imagen"
+                            />
+                            <div className={styles.buttonContainer}>
+                                <Button
+                                    variation="primary"
+                                    text="Guardar cambios"
+                                    type="submit"
+                                />
+                                <Button
+                                    variation="light"
+                                    text="Cancelar"
+                                    onClick={() => setShowModal(false)}
+                                />
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </div>
-        )}
-    </div>
+            )}
+        </div>
     );
 };
 

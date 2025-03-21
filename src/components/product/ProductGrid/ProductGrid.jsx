@@ -12,7 +12,7 @@ const ProductGrid = ({ limit = 10, activeCategory = null }) => {
         const fetchProducts = async () => {
             try {
                 const data = await getProducts();
-                console.log("✅ Productos obtenidos desde la API:", data);
+                "✅ Productos obtenidos desde la API:", data;
                 setProducts(data);
             } catch (error) {
                 console.error(

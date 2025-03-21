@@ -20,9 +20,9 @@ function ProductCard({ id, image, name, rating }) {
         if (!isAlreadyFavorite) {
             favorites.push(product);
             localStorage.setItem("favorites", JSON.stringify(favorites));
-            console.log("Producto guardado en favoritos:", product);
+            "Producto guardado en favoritos:", product;
         } else {
-            console.log("El producto ya está en favoritos.");
+            ("El producto ya está en favoritos.");
         }
     };
 
