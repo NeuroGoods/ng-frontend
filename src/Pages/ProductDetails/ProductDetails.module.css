@@ -3,36 +3,81 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    padding: 20px;
-  }
-  
-  .card {
+    min-height: calc(100vh - 210px);
+    background-color: #e2e8f0;
+}
+
+.card {
     background: white;
     border-radius: 20px;
     padding: 20px;
-    width: 90%;
-    max-width: 400px;
-  }
-  
-  .imageContainer {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.imageContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #cbd5e1;
-    height: 200px;
+    height: 250px;
+    width: 100%;
     border-radius: 12px;
-  }
-  
-  .image {
-    width: 100px;
-    height: 100px;
-  }
-  
-  .quantityContainer {
+}
+
+.image {
+    width: 120px;
+    height: 120px;
+}
+
+.quantityContainer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 10px 15px;
     margin: 15px 0;
-  }
-  
+}
+
+.quantityButton {
+    background: #cfe2a5;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.quantity {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+.time {
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.description {
+    text-align: left;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.buttonContainer button {
+    width: 48%;
+    padding: 12px;
+    font-size: 16px;
+}
