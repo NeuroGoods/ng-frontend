@@ -29,7 +29,7 @@ const ProductGrid = ({ limit = 10, activeCategory = "Alive" }) => {
     const filterProducts = (allProducts, categoryId) => {
         if (!allProducts.length) return;
         const filtered = allProducts
-            .filter((product) => product.status === categoryId)
+            .filter((product) => product.category_id === categoryId)
             .slice(0, limit); // Limitar la cantidad de productos mostrados
         setFilteredProducts(filtered);
     };
