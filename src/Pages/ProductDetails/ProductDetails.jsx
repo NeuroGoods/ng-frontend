@@ -4,6 +4,7 @@ import { getProductById } from "../../api/apiService";
 import styles from "./ProductDetails.module.css";
 import ImageContainer from "../../components/ui/ImageContainer/ImageContainer";
 import ContainerProductDetail from "../../components/ui/ContainerProductDetail/ContainerProductDetail";
+import Button from "../../components/ui/Button/Button";
 
 const ProductDetailsPage = () => {
     const { id } = useParams();
