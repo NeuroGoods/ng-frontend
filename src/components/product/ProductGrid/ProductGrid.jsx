@@ -41,6 +41,7 @@ const ProductGrid = ({ limit = 10, activeCategory = "Alive" }) => {
         {filteredProducts.length > 0 ? (
             filteredProducts.map((product) => (
                 <ProductCard
+                id={product.id}
                     key={product.id}
                     image={product.image}
                     name={product.name}

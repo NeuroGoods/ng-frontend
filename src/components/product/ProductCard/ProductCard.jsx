@@ -27,8 +27,8 @@ function ProductCard({ id, image, name, rating }) {
     };
 
     const handleCardClick = () => {
-        localStorage.setItem("lastViewedProductId", product.id);
-        navigate(`/product-details/${product.id}`);
+        localStorage.setItem("lastViewedProductId", id);
+        navigate(`/product-details/${id}`);
     };
 
     return (
@@ -50,7 +50,9 @@ function ProductCard({ id, image, name, rating }) {
                         <span className={styles.stars}>
                             {"⭐".repeat(rating) || "⭐⭐⭐⭐⭐"}
                         </span>
-                        <span className={styles.ratingValue}>{rating || 5}</span>
+                        <span className={styles.ratingValue}>
+                            {rating || 5}
+                        </span>
                     </div>
                 </div>
             </div>
