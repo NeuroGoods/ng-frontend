@@ -4,7 +4,7 @@
     width: 100%;
     max-width: 430px; /* Ancho máximo de 430px */
     height: 300px; /* Altura de 932px */
-    margin: 0 auto;
+    margin: 30px auto;
     overflow: hidden; /* Oculta contenido fuera del área visible */
   }
   
@@ -44,8 +44,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-   
-  text-align: center;
+    text-align: center;
     
   }
   

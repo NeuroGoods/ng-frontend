@@ -6,6 +6,8 @@
     padding: 1rem 1rem;
     border-bottom: 1px solid #e9ecef;
     position: fixed;
+    z-index: 1000;
+    background-color: #fff;
     left: 0;
     top: 0;
 }

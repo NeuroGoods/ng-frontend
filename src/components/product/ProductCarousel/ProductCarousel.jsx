@@ -24,6 +24,7 @@ const ProductCarousel = () => {
   ];
 
   return (
+    
     <div className={styles.carouselContainer}>
       <Slider ref={sliderRef} {...settings}>
         {images.map((src, index) => (

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import CategoryNav from "../../components/ui/CategoryNav/CategoryNav";
 import ProductGrid from "../../components/product/ProductGrid/ProductGrid";
 import styles from "./Products.module.css";

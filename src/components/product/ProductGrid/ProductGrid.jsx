@@ -36,6 +36,7 @@ const ProductGrid = ({ limit = 10, activeCategory = "Alive" }) => {
 
     return (
         <div className={styles.productsGrid}>
+            
             {filteredProducts.length > 0 ? (
                 filteredProducts.map((product) => (
                     <ProductCard
