@@ -72,9 +72,7 @@ const PublishProduct = () => {
       validationErrors.description = "⚠ Máximo 500 caracteres.";
     }
 
-    if (!formData.image || !/^https?:\/\/.+\.(jpg|jpeg|png|gif|webp)$/i.test(formData.image)) {
-      validationErrors.image = "⚠ Debes ingresar una URL válida de imagen (jpg, png, etc).";
-    }
+
 
     if (formData.categories.length === 0) {
       validationErrors.categories = "⚠ Selecciona al menos una categoría.";
@@ -86,7 +84,8 @@ const PublishProduct = () => {
 
   const handleChange = (e) => {
     if (e.target.name === "image") {
-      setFormData({ ...formData, image: e.target.files[0] });
+      const imageValue = e.target.files && e.target.files.length > 0 ? e.target.files[0] : e.target.value;
+      setFormData({ ...formData, image: imageValue });
     } else {
       setFormData({ ...formData, [e.target.name]: sanitizeInput(e.target.value) });
     }
