@@ -27,6 +27,7 @@ function App() {
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>
         </main>
+        <Navbar />
         <Footer />
         </>
     );
