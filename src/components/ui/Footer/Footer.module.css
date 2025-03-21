@@ -1,10 +1,6 @@
-:root {
-    --primary: #58A19B; 
-  
   .footer {
-    background-color: var(--primary);
+    background-color: #B5DCCA;
     padding: 16px;
-    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
@@ -20,7 +16,7 @@
   }
   
   .logo {
-    width: 60px; /* Ajusta según necesidad */
+    width: 60px; 
     height: auto;
   }
   

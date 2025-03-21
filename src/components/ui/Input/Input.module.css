@@ -29,15 +29,12 @@
   }
   
 
-  .publish{
+  .product{
     background-color: var(--tertiary);
   }
 
   .login{
-    background-color: transparent;
-    border: solid 1px rgb(0, 0, 0, 0.3);
-    border-radius: 7px;
-    margin: 10px 0;
+    background-color: var(--details);
   }
 
   .search{

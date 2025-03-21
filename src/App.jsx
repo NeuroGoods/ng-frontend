@@ -9,11 +9,14 @@ import Products from "./Pages/Products/Products";
 import PublishProduct from "./Pages/PublishProduct/PublishProduct";
 import Home from "./Pages/Home/Home";
 import Favorites from "./Pages/Favorites/Favorites";
-
+import Footer from "./components/ui/Footer/Footer";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 function App() {
     return (
         <>
-            <main className="mainContent">
+        <Header />
+        <main>
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/favorites" element={<Favorites />} />
@@ -23,7 +26,8 @@ function App() {
                 <Route path="/publish-product" element={<PublishProduct />} />
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>
-            </main>
+        </main>
+        <Footer />
         </>
     );
 }
