@@ -22,23 +22,25 @@ const Favorites = () => {
             <div className="product-list">
                 {favorites.length > 0 ? (
                     favorites.map((product) => (
-                        <React.Fragment key={product.id}>
-                            <div className="product-wrapper">
-                                <ImageContainer image={product.image} />
+                        <div key={product.id} className="product-wrapper">
+                            {/* Botón de eliminar */}
+                            <button
+                                className="delete-button"
+                                onClick={() => handleDelete(product.id)}
+                            >
+                                <FaTrash size={20} />
+                            </button>
+
+                            {/* Contenedor de Imagen y Detalles */}
+                            <div className="product-content">
+                                <img src={product.image} alt={product.name} className="product-image" />
                                 <ContainerProductDetail
                                     id={product.id}
                                     name={product.name}
                                     rating={product.rating}
                                 />
-
-                                <button
-                                    className="delete-button"
-                                    onClick={() => handleDelete(product.id)}
-                                >
-                                    <FaTrash size={20} />
-                                </button>
                             </div>
-                        </React.Fragment>
+                        </div>
                     ))
                 ) : (
                     <p>No hay productos en esta categoría.</p>
