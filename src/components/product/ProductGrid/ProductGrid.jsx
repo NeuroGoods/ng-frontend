@@ -3,7 +3,7 @@ import ProductCard from "../ProductCard/ProductCard";
 import { getProducts } from "../../../api/apiService";
 import styles from "./ProductGrid.module.css";
 
-const ProductGrid = ({ limit = 10, activeCategory = "Todos" }) => {
+const ProductGrid = ({ limit = 10, activeCategory = null }) => {
     const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
 
