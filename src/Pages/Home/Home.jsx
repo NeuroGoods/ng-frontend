@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 
 const Home = () => {
-  const [activeCategory, setActiveCategory] = useState("Alive"); 
+  const [activeCategory, setActiveCategory] = useState(null); 
   return (
     <> 
     <div style={{display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem", padding: "0 2rem"}}>
