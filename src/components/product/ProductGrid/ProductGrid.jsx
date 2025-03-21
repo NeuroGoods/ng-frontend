@@ -21,18 +21,18 @@ const ProductGrid = ({ limit = 10, activeCategory = "Alive" }) => {
         fetchProducts();
       }, []);
 
-    // Filtrar productos cuando cambie la categoría activa
-    // useEffect(() => {
-    //     filterProducts(products, activeCategory);
-    // }, [activeCategory, products]);
+    //Filtrar productos cuando cambie la categoría activa
+    useEffect(() => {
+        filterProducts(products, activeCategory);
+    }, [activeCategory, products]);
 
-    // const filterProducts = (allProducts, categoryId) => {
-    //     if (!allProducts.length) return;
-    //     const filtered = allProducts
-    //         .filter((product) => product.status === categoryId)
-    //         .slice(0, limit); // Limitar la cantidad de productos mostrados
-    //     setFilteredProducts(filtered);
-    // };
+    const filterProducts = (allProducts, categoryId) => {
+        if (!allProducts.length) return;
+        const filtered = allProducts
+            .filter((product) => product.status === categoryId)
+            .slice(0, limit); // Limitar la cantidad de productos mostrados
+        setFilteredProducts(filtered);
+    };
 
     return (
         <div className={styles.productsGrid}>
