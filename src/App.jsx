@@ -1,3 +1,4 @@
+//La primera linea de un futuro brillante - 13 4ever - Nico
 import "./App.css";
 import { useEffect } from "react";
 import Navbar from "./components/ui/Navbar/Navbar";

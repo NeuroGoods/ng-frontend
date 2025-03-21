@@ -17,6 +17,7 @@ const Home = () => {
     <FaSearch style={{marginTop:"25px", width:"60px", marginRight:"-10px"}}/>
     <Input variation="search"/>
     </div>
+    
     <ProductCarousel/>
     <CategoryNav
                 activeCategory={activeCategory}
