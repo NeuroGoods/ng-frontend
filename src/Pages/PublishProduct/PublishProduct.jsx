@@ -196,9 +196,8 @@ const PublishProduct = () => {
         <div className="form-group">
           <label>Imagen del producto:</label>
           <input
-            type="file"
+            type="text"
             name="image"
-            accept="image/*"
             onChange={handleChange}
           />
           {errors.image && <p className="error">{errors.image}</p>}
