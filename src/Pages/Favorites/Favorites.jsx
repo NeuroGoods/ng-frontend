@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
 import ContainerProductDetail from "../../components/ui/ContainerProductDetail/ContainerProductDetail";
 import ImageContainer from "../../components/ui/ImageContainer/ImageContainer";
-import { FaTrash } from "react-icons/fa"; // Importamos el ícono de la papelera
-import "./favorites.css"; // Importamos los estilos
+import { FaTrash } from "react-icons/fa"; 
+import "./favorites.css"; 
 
 const Favorites = () => {
   const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) || []);
 
-  // Función para eliminar un producto
   const handleDelete = (productId) => {
     const updatedFavorites = favorites.filter(product => product.id !== productId);
     setFavorites(updatedFavorites);
-    localStorage.setItem("favorites", JSON.stringify(updatedFavorites)); // Actualizamos localStorage
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites)); 
   };
 
   return (
@@ -27,12 +26,12 @@ const Favorites = () => {
                   name={product.name}
                   rating={product.rating}
                 />
-                {/* Botón de papelera con clase delete-button */}
+       
                 <button 
                   className="delete-button" 
                   onClick={() => handleDelete(product.id)}
                 >
-                  <FaTrash size={20} /> {/* Ícono de la papelera */}
+                  <FaTrash size={20} /> 
                 </button>
               </div>
             </React.Fragment>

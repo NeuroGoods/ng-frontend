@@ -7,9 +7,9 @@ import styles from "./Products.module.css";
 const Products = () => {
     const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
-    const [activeCategory, setActiveCategory] = useState("Alive"); // ID de la categoría activa
+    const [activeCategory, setActiveCategory] = useState("Alive"); 
 
-    // Obtener productos desde la API
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -23,7 +23,6 @@ const Products = () => {
         fetchData();
     }, []);
 
-    // Filtrar productos cuando cambie la categoría activa
     useEffect(() => {
         filterProducts(products, activeCategory);
         console.log(activeCategory)
@@ -49,7 +48,7 @@ const Products = () => {
                     filteredProducts.map((product) => (
                         <ProductCard
                             key={product.id}
-                            id={product.id} // Se incluye el id del producto
+                            id={product.id} 
                             image={product.image}
                             name={product.name}
                             rating={product.rating}
